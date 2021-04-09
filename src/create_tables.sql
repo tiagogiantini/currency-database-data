@@ -42,10 +42,8 @@ ENGINE = InnoDB;
 -- Table `currency_database`.`country_has_currency`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `currency_database`.`country_has_currency` (
-  `id` INT NOT NULL,
   `country_id_iso3166` INT NOT NULL,
   `currency_id_iso4217` INT NOT NULL,
-  PRIMARY KEY (`id`),
   INDEX `fk_country_has_currency_currency1_idx` (`currency_id_iso4217` ASC),
   INDEX `fk_country_has_currency_country_idx` (`country_id_iso3166` ASC),
   CONSTRAINT `fk_country_has_currency_country`
