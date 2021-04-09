@@ -31,7 +31,6 @@ This database contains three tables: currency, country, country_has_currency. Ea
 
 | Field name            | Field Type      | Description                                                                                                                  | 
 |-----------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------|
-| `id`                  | INT(11)         | The unique identifier combined by country_id_iso3166 and currency_id_iso4217.                                                |
 | `country_id_iso3166`  | INT(11)         | The foreign key for the country.                                                                                             |
 | `currency_id_iso4217` | INT(11)         | The foreign key for the currency.                                                                                            |
 
