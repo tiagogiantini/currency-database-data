@@ -43,6 +43,10 @@ To get a local copy up and running follow these simple steps.
 
 Make sure you have MySQL Community Server 5.7 installed in your development environment.
 
+### Clone the repository
+```
+git clone https://github.com/tiagogiantini/currency-database-data.git
+```
 
 ### Create database
 ```sql
