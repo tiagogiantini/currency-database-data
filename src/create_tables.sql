@@ -9,15 +9,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema currency_database
+-- Table `currency`
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `currency_database` DEFAULT CHARACTER SET utf8 ;
-USE `currency_database` ;
-
--- -----------------------------------------------------
--- Table `currency_database`.`currency`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `currency_database`.`currency` (
+CREATE TABLE IF NOT EXISTS `currency` (
   `id_iso4217` INT NOT NULL,
   `code` VARCHAR(3) NOT NULL,
   `name` VARCHAR(255) NOT NULL,
@@ -27,9 +21,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `currency_database`.`country`
+-- Table `country`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `currency_database`.`country` (
+CREATE TABLE IF NOT EXISTS `country` (
   `id_iso3166` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `alpha2_code` VARCHAR(2) NOT NULL,
@@ -39,21 +33,21 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `currency_database`.`country_has_currency`
+-- Table `country_has_currency`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `currency_database`.`country_has_currency` (
+CREATE TABLE IF NOT EXISTS `country_has_currency` (
   `country_id_iso3166` INT NOT NULL,
   `currency_id_iso4217` INT NOT NULL,
   INDEX `fk_country_has_currency_currency1_idx` (`currency_id_iso4217` ASC),
   INDEX `fk_country_has_currency_country_idx` (`country_id_iso3166` ASC),
   CONSTRAINT `fk_country_has_currency_country`
     FOREIGN KEY (`country_id_iso3166`)
-    REFERENCES `currency_database`.`country` (`id_iso3166`)
+    REFERENCES `country` (`id_iso3166`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_country_has_currency_currency1`
     FOREIGN KEY (`currency_id_iso4217`)
-    REFERENCES `currency_database`.`currency` (`id_iso4217`)
+    REFERENCES `currency` (`id_iso4217`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
