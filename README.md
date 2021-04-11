@@ -15,7 +15,7 @@ This database contains three tables: currency, country, country_has_currency. Ea
 |-----------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------|
 | `id_iso4217`          | INT(11)         | The unique identifier used by ISO 4217.                                                                                      |
 | `code_iso4217`        | VARCHAR(3)      | The alphabetic code representation for currency.                                                                             |
-| `symbol`              | VARCHAR(10)     | The symbol representation for currency.                                                                                      |
+| `symbol`              | VARCHAR(16)     | The symbol representation for currency.                                                                                      |
 | `name`                | VARCHAR(255)    | The currency name.                                                                                                           |
 | `obsolete`            | BIT(1)          | The indicator to currency obsolete. Default 0 for non-obsolete and 1 to obsolete.                                            |
 
