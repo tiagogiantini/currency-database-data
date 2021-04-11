@@ -15,15 +15,15 @@ CREATE TABLE IF NOT EXISTS `currency` (
   PRIMARY KEY (`id_iso4217`))
 ENGINE = InnoDB;
 
-
+                                
 -- -----------------------------------------------------
 -- Table `country`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `country` (
   `id_iso3166` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
-  `alpha2_code` VARCHAR(2) NOT NULL,
-  `alpha3_code` VARCHAR(3) NOT NULL,
+  `code_alpha2` VARCHAR(2) NOT NULL,
+  `code_alpha3` VARCHAR(3) NOT NULL,
   PRIMARY KEY (`id_iso3166`))
 ENGINE = InnoDB;
 
