@@ -50,7 +50,7 @@ git clone https://github.com/tiagogiantini/currency-database-data.git
 
 ### Create database
 ```sql
-create database your_dabase_name;
+create database your_dabase_name character set UTF8;
 ```
 
 ### Create tables
