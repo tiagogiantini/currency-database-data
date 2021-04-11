@@ -14,7 +14,8 @@ This database contains three tables: currency, country, country_has_currency. Ea
 | Field name            | Field Type      | Description                                                                                                                  | 
 |-----------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------|
 | `id_iso4217`          | INT(11)         | The unique identifier used by ISO 4217.                                                                                      |
-| `code`                | VARCHAR(3)      | The alphabetic code representation for currency.                                                                             |
+| `code_iso4217`        | VARCHAR(3)      | The alphabetic code representation for currency.                                                                             |
+| `symbol`              | VARCHAR(10)     | The symbol representation for currency.                                                                                      |
 | `name`                | VARCHAR(255)    | The currency name.                                                                                                           |
 | `obsolete`            | BIT(1)          | The indicator to currency obsolete. Default 0 for non-obsolete and 1 to obsolete.                                            |
 
@@ -24,8 +25,8 @@ This database contains three tables: currency, country, country_has_currency. Ea
 |-----------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------|
 | `id_iso3166`          | INT(11)         | The unique identifier used by ISO 3166.                                                                                      |
 | `name`                | VARCHAR(255)    | The country name                                                                                                             |
-| `alpha2_code`         | VARCHAR(2)      | The alpha-2 code.                                                                                                            |
-| `alpha3_code`         | VARCHAR(3)      | The alpha-3 code.                                                                                                            |
+| `code_alpha2`         | VARCHAR(2)      | The alpha-2 code.                                                                                                            |
+| `code_alpha3`         | VARCHAR(3)      | The alpha-3 code.                                                                                                            |
 
 ### Table country_has_currency
 
